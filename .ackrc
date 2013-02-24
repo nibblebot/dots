@@ -1,0 +1,17 @@
+#ignores
+--ignore-dir=node_modules
+
+#types
+--type-add=js=.json
+--type-set=handlebars=.handlebars
+--handlebars
+--js
+--css
+--html
+--php
+--ruby
+--rake
+--shell
+--text
+--xml
+--vim
