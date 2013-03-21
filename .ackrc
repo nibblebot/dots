@@ -1,5 +1,7 @@
 #ignores
 --ignore-dir=node_modules
+# follow symlinks
+--follow
 
 #types
 --type-add=js=.json
