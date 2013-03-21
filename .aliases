@@ -3,7 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias _='sudo'
 alias history='fc -l 1'
-alias l='ls'
+alias l='ls -1'
 alias la='ls -lA1h'
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
@@ -14,15 +14,26 @@ alias -g NF='*(.om[1])' # newest file
 alias vm="ssh root@bitly.org"
 alias sc="sudo systemctl"
 alias ya='yaourt'
+alias pc='sudo pacman'
 alias g='git'
 alias gpf='git push -f'
 alias gpp='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gpr='hub pull-request -b "bitly:master"'
 alias gri='git rebase -i master'
+alias xres='e ~/.Xresources && xrdb -override ~/.Xresources'
+alias aliases='e ~/.aliases && source ~/.aliases'
+f() {
+    find . -iname "*$1*"
+}
 
 dot() {
-mv "$1" ~/.dotfiles/
-NEW=~/.dotfiles/"$1"
-ln -s $NEW
-echo "$1 moved to $NEW"
+    mv "$1" ~/.dotfiles/
+    NEW=~/.dotfiles/"$1"
+    ln -s $NEW
+    echo "$1 moved to $NEW"
+}
+
+font() {
+    printf '\33]710;%s\007' "xft:${1}:size=10"
+    printf '\33]711;%s\007' "xft:${1}:bold:size=10"
 }
