@@ -38,6 +38,6 @@
 [difftool "diffmerge"]
 	cmd = diffmerge "$LOCAL" "$REMOTE"
 [core]
-	editor = $EDITOR -w
+	editor = vim
 [mergetool "vimdiff3"]
 	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"

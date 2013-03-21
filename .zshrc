@@ -1,14 +1,18 @@
-VISUAL="subl"
-EDITOR="vim"
-TERM="xterm"
 source $HOME/.aliases
 autoload -U zmv
+dynamic-colors init
 
+source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
 eval `dircolors /etc/dir_colors`
 
 setopt auto_name_dirs
 setopt auto_pushd
 setopt pushd_ignore_dups
+
+setopt no_check_jobs
+setopt no_hup
+
+
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
@@ -364,3 +368,4 @@ ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+source /usr/share/doc/pkgfile/command-not-found.zsh

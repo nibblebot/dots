@@ -2,26 +2,32 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
+call vundle#rc()
 
-"Bundle 'gmarik/vundle'
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'nono/vim-handlebars'
+Bundle 'less-syntax'
+"Bundle 'Handlebars'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-coffee-script'
+Bundle 'Lokaltog/vim-powerline'
 "Bundle 'nibblebot/google-closure-linter-for-vim'
-"Bundle 'altercation/vim-colors-solarized'
-"Bundle 'The-NERD-Commenter'
-"Bundle 'The-NERD-tree'
+Bundle 'The-NERD-tree'
 "Bundle 'repeat.vim'
 "Bundle 'matchit.zip'
 "Bundle 'Raimondi/delimitMate'
-"Bundle 'ack.vim'
+Bundle 'ack.vim'
 "Bundle 'EasyGrep'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'tpope/vim-surround'
 "Bundle 'juvenn/mustache.vim'
 "Bundle 'nono/vim-handlebars'
 "Bundle 'UltiSnips'
-"Bundle 'ZoomWin'
-"Bundle 'fholgado/minibufexpl.vim'
-"Bundle 'groenewege/vim-less'
+Bundle 'ZoomWin'
+Bundle 'groenewege/vim-less'
 "Bundle 'Command-T'
 "Bundle 'briancollins/vim-jst'
 "Bundle 'pangloss/vim-javascript'
@@ -34,22 +40,34 @@ filetype plugin indent on     " required!
 syntax on
 
 let mapleader = ','
-let delimitMate_no_esc_mapping = 1
+"let delimitMate_no_esc_mapping = 1
 
-let g:miniBufExplorerMoreThanOne=1
+set wildignore+=*/node_modules/*
 
-"let loaded_minibufexplorer = 1
+map <Leader>r :%s/<C-r>"/
+
+" Buffer Switch
+map <Leader>a :bp<CR>
+map <Leader>s :bn<CR>
+" CtrlP
+"let g:ctrlp_map = '<leader>p'
+map <Leader>p :CtrlP<CR>
+map <Leader>b :CtrlPBuffer<CR>
+" nearest VCS root, starting from CWD
+"let g:ctrlp_working_path_mode = 'wra'
+let g:ctrlp_working_path_mode = '0'
+
+"let loaded_minibufexplorer = 1 "Disable MBExplorer
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-
-if has('gui_running')
-    set guifont=Consolas:h15
-    set guioptions=egmr
-endif
-
-set background=light
+" don't delay when escaping from insert modes
+set ttimeoutlen=0
+" Color
+set t_Co=256
+colorscheme solarized
+set background=dark
 
 
 " FORMATTING
@@ -60,7 +78,8 @@ autocmd Filetype less setl ts=2 sts=2 sw=2
 autocmd Filetype scss setl ts=2 sts=2 sw=2
 autocmd Filetype ruby setl ts=2 sts=2 sw=2
 autocmd Filetype eruby setl ts=2 sts=2 sw=2
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable ts=2 sts=2 sw=2
+autocmd Filetype coffee setl foldmethod=indent nofoldenable ts=2 sts=2 sw=2
+"au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable ts=2 sts=2 sw=2
 "autocmd Filetype js setlocal makeprg=gjslint\ %
 "autocmd Filetype js setlocal errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
 set expandtab " Tabs are spaces!
@@ -80,14 +99,11 @@ set smartcase					" case sensitive when uc present
 set gdefault					" the /g flag on :s substitutions by default
 "clearing highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
-nmap <silent> <leader>d /<<<<<<<<CR>
+"nmap <silent> <leader>d /<<<<<<<<CR>
 
 
 set mouse=a					" automatically enable mouse usage
 
-" Color
-set t_Co=256
-"colorscheme solarized
 
 " Plugin Config
 "" NERDTree
@@ -96,7 +112,8 @@ let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.pyc$', '\~$']
 let g:NERDTreeMinimalUI=1
 
-map <Leader>p :NERDTreeToggle<CR>
+
+nmap <Leader>t :NERDTreeToggle<CR>
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
 
@@ -110,18 +127,16 @@ endif
 "
 "
 "" ZoomWin
-map <Leader><Leader> :ZoomWin<CR>
+"map <Leader><Leader> :ZoomWin<CR>
 
 "" MiniBufExplorer
 "let g:miniBufExplMaxSize = 1
 let g:miniBufExplorerMoreThanOne=2
 let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapCTabSwitchBufs = 0
 "let g:miniBufExplShowBufNumbers = 0
 let g:statusLineText='%{getcwd()}'          " current dir
 let g:miniBufExplCheckDupeBufs = 0
-"map <Leader>x :MBEbn<CR>
-"map <Leader>z :MBEbp<CR>
 
 set noesckeys
 let g:miniBufExplUseSingleClick = 1
@@ -241,7 +256,7 @@ vnoremap > >gv
 map <F6> :%s/\s\+$//e<CR> 
 
 " select all
-map <Leader>a ggVG
+map <Leader>A ggVG
 
 "Ack
 map <Leader>f :Ack <C-r>"<CR>
