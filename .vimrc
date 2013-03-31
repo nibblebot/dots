@@ -1,3 +1,4 @@
+set noesckeys   " don't wait for esc timeout * MUST BE BEFORE nocompatible
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -8,11 +9,11 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nono/vim-handlebars'
 Bundle 'less-syntax'
+Bundle 'w0ng/vim-hybrid'
 "Bundle 'Handlebars'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
-Bundle 'vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'nibblebot/google-closure-linter-for-vim'
 Bundle 'The-NERD-tree'
@@ -32,7 +33,7 @@ Bundle 'groenewege/vim-less'
 "Bundle 'briancollins/vim-jst'
 "Bundle 'pangloss/vim-javascript'
 "Bundle 'bigfish/vim-js-beautify'
-"Bundle 'kchmck/vim-coffee-script'
+Bundle 'kchmck/vim-coffee-script'
 "Bundle 'jnwhiteh/vim-golang'
 
 
@@ -66,8 +67,10 @@ let g:ctrlp_working_path_mode = '0'
 set ttimeoutlen=0
 " Color
 set t_Co=256
-colorscheme solarized
-set background=dark
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
+"colorscheme solarized
+"set background=dark
 
 
 " FORMATTING
@@ -138,7 +141,6 @@ let g:miniBufExplMapCTabSwitchBufs = 0
 let g:statusLineText='%{getcwd()}'          " current dir
 let g:miniBufExplCheckDupeBufs = 0
 
-set noesckeys
 let g:miniBufExplUseSingleClick = 1
 "let g:miniBufExplForceSyntaxEnable = 1
 
@@ -244,6 +246,8 @@ nnoremap ; :
 " Retabulate
 map <F12> m`ggVG=``
 nmap <leader>j :JSBeautify<cr>
+
+map <F11> :%s/!/#:%s/*//:%s/: /=
 
 " Insert line breaks easily
 map <S-CR> m`o<ESC>``

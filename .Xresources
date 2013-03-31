@@ -6,9 +6,19 @@ Xft.hintstyle:	hintfull
 Xft.rgba:	rgb
 Xft.dpi:	96
 
+!URxvt.letterSpace: -1
 URxvt.letterSpace: 0
-URxvt.font: xft:Consolas:size=9
-URxvt.boldFont: xft:Consolas:bold:size=9
+
+!URxvt.font: -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+!URxvt.boldFont: -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+!URxvt.font: -*-dina-medium-r-normal-*-12-*-*-*-*-*-*-*
+URxvt.font: -*-proggycleansz-*-*-*-*-12-*-*-*-*-*-*-*
+URxvt.boldFont: -*-proggycleansz-*-*-*-*-12-*-*-*-*-*-*-*
+!URxvt.font: -*-gohufont-medium-r-normal-*-11-*-*-*-*-*-*-*
+!URxvt.boldFont: -*-gohufont-medium-r-normal-*-11-*-*-*-*-*-*-*
+!URxvt.font: xft:Consolas:size=9
+!URxvt.font: xft:Anonymous Pro:size=9
+!URxvt.boldFont: xft:Consolas:bold:size=9
 URxvt.iso14755 : false
 
 urxvt*dynamicColors: on

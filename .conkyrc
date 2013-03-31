@@ -1,0 +1,8 @@
+background no
+short_units yes
+out_to_console yes 
+out_to_x no
+update_interval 1.0 
+
+TEXT
+${hwmon 0 temp 1}C ${hwmon 1 fan 1}RPM ^i(.icons/thayer/net-wifi5.xbm) ${wireless_link_qual_perc wlan0}% ^i(.icons/sm4tik/cpu.xbm) ${cpu}% ^i(.icons/sm4tik/mem.xbm) $mem ^i(.icons/sm4tik/ac_01.xbm) ${battery_percent}% ${time %H:%M}

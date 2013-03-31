@@ -3,6 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias _='sudo'
 alias history='fc -l 1'
+#alias ls='ls --group-directories-first'
 alias l='ls -1'
 alias la='ls -lA1h'
 alias e="$EDITOR"
@@ -33,6 +34,10 @@ dot() {
     echo "$1 moved to $NEW"
 }
 
+bfont() {
+    printf '\33]710;%s\007' "-*-${1}-*-*-*-*-11-*-*-*-*-*-iso8859-*"
+    #printf '\33]711;%s\007' "-*-${1}-*-*-*-*-11-*-*-*-*-*-iso8859-*"
+}
 font() {
     printf '\33]710;%s\007' "xft:${1}:size=10"
     printf '\33]711;%s\007' "xft:${1}:bold:size=10"

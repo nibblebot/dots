@@ -1,2 +1,4 @@
 clear Lock
 keycode 66 = Escape
+!for irssi
+!keysym Super_L = Meta_L Super_L
