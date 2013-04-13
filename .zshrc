@@ -1,4 +1,5 @@
 source $HOME/.aliases
+source /etc/profile.d/z.sh
 export TERM='xterm'
 autoload -U zmv
 dynamic-colors init
@@ -103,22 +104,23 @@ function take() {
 function git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  #$(parse_git_dirty)
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
 
 # Checks if working tree is dirty
-parse_git_dirty() {
-  local SUBMODULE_SYNTAX=''
-  if [[ "$(git config --get oh-my-zsh.hide-status)" != "1" ]]; then
-    SUBMODULE_SYNTAX="--ignore-submodules=dirty"
-    if [[ -n $(git status -s ${SUBMODULE_SYNTAX}  2> /dev/null) ]]; then
-      echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
-    else
-      echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
-    fi
-  fi
-}
+#parse_git_dirty() {
+  #local SUBMODULE_SYNTAX=''
+  #if [[ "$(git config --get oh-my-zsh.hide-status)" != "1" ]]; then
+    #SUBMODULE_SYNTAX="--ignore-submodules=dirty"
+    #if [[ -n $(git status -s ${SUBMODULE_SYNTAX}  2> /dev/null) ]]; then
+      #echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+    #else
+      #echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+    #fi
+  #fi
+#}
 
 # get the difference between the local and remote branches
 git_remote_status() {
@@ -349,12 +351,6 @@ fi
 # Apply theming defaults
 PS1="%n@%m:%~%# "
 
-# git theming default: Variables for theming the git info prompt
-ZSH_THEME_GIT_PROMPT_PREFIX="git:("         # Prefix at the very beginning of the prompt, before the branch name
-ZSH_THEME_GIT_PROMPT_SUFFIX=")"             # At the very end of the prompt
-ZSH_THEME_GIT_PROMPT_DIRTY="*"              # Text to display if the branch is dirty
-ZSH_THEME_GIT_PROMPT_CLEAN=""               # Text to display if the branch is clean
-
 # Setup the prompt with pretty colors
 setopt prompt_subst
 
@@ -365,8 +361,8 @@ compinit -i
 #➜
 PROMPT='%{$fg_bold[red]%}%# %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%})%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 source /usr/share/doc/pkgfile/command-not-found.zsh

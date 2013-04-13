@@ -67,10 +67,10 @@ let g:ctrlp_working_path_mode = '0'
 set ttimeoutlen=0
 " Color
 set t_Co=256
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
-"colorscheme solarized
-"set background=dark
+"let g:hybrid_use_Xresources = 1
+"colorscheme hybrid
+colorscheme solarized
+set background=dark
 
 
 " FORMATTING
