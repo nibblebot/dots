@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'gregsexton/MatchTag'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nono/vim-handlebars'
 Bundle 'less-syntax'
@@ -19,14 +20,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'The-NERD-tree'
 "Bundle 'repeat.vim'
 "Bundle 'matchit.zip'
-"Bundle 'Raimondi/delimitMate'
+Bundle 'Raimondi/delimitMate'
 Bundle 'ack.vim'
 "Bundle 'EasyGrep'
 "Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-surround'
 "Bundle 'juvenn/mustache.vim'
-"Bundle 'nono/vim-handlebars'
-"Bundle 'UltiSnips'
+Bundle 'UltiSnips'
 Bundle 'ZoomWin'
 Bundle 'groenewege/vim-less'
 "Bundle 'Command-T'
@@ -35,6 +35,7 @@ Bundle 'groenewege/vim-less'
 "Bundle 'bigfish/vim-js-beautify'
 Bundle 'kchmck/vim-coffee-script'
 "Bundle 'jnwhiteh/vim-golang'
+"Bundle 'mattn/zencoding-vim'
 
 
 filetype plugin indent on     " required!
@@ -59,9 +60,9 @@ map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = '0'
 
 "let loaded_minibufexplorer = 1 "Disable MBExplorer
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " don't delay when escaping from insert modes
 set ttimeoutlen=0
@@ -76,12 +77,9 @@ set background=dark
 " FORMATTING
 set autoindent " Maintain indent
 set smartindent " Indent further within code blocks
-set ts=4 sts=4 sw=4
-autocmd Filetype less setl ts=2 sts=2 sw=2
-autocmd Filetype scss setl ts=2 sts=2 sw=2
-autocmd Filetype ruby setl ts=2 sts=2 sw=2
-autocmd Filetype eruby setl ts=2 sts=2 sw=2
-autocmd Filetype coffee setl foldmethod=indent nofoldenable ts=2 sts=2 sw=2
+set ts=2 sts=2 sw=2
+autocmd Filetype python setl ts=4 sts=4 sw=4
+autocmd Filetype coffee setl foldmethod=indent nofoldenable
 "au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable ts=2 sts=2 sw=2
 "autocmd Filetype js setlocal makeprg=gjslint\ %
 "autocmd Filetype js setlocal errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q

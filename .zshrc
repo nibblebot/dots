@@ -1,6 +1,9 @@
+export PATH="$PATH:$HOME/.dynamic-colors/bin:$HOME/bin"
+export EDITOR="vim"
+export TERM='xterm'
+export JAVA_HOME="/usr"
 source $HOME/.aliases
 source /etc/profile.d/z.sh
-export TERM='xterm'
 autoload -U zmv
 dynamic-colors init
 

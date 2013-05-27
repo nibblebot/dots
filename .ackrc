@@ -6,8 +6,10 @@
 #types
 --type-add=js=.json
 --type-set=handlebars=.handlebars
+--type-set=coffee=.coffee
 --type-set=less=.less
 --handlebars
+--coffee
 --js
 --css
 --html
@@ -15,6 +17,6 @@
 --ruby
 --rake
 --shell
---text
+#--text
 --xml
 --vim

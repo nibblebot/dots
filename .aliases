@@ -23,6 +23,10 @@ alias gpr='hub pull-request -b "bitly:master"'
 alias gri='git rebase -i master'
 alias xres='e ~/.Xresources && xrdb -override ~/.Xresources'
 alias aliases='e ~/.aliases && source ~/.aliases'
+
+alias light="dynamic-colors switch solarized-light"
+alias dark="dynamic-colors switch solarized-dark"
+
 f() {
     find . -iname "*$1*"
 }
@@ -42,3 +46,5 @@ font() {
     printf '\33]710;%s\007' "xft:${1}:size=10"
     printf '\33]711;%s\007' "xft:${1}:bold:size=10"
 }
+
+# vim: set ft=sh:
