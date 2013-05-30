@@ -7,7 +7,7 @@ xset +fp /usr/share/fonts/artwiz-fonts
 xset +fp /usr/share/fonts/misc
 xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
-urxvtd -q -f -o &
+#urxvtd -q -f -o &
 redshiftgui &
 nm-applet &
 #wicd-gtk --tray &

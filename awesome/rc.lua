@@ -42,7 +42,7 @@ end
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -51,7 +51,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+modkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
@@ -191,11 +191,27 @@ for s = 1, screen.count() do
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
+    battery_text = wibox.widget.textbox()
+    vicious.register(battery_text, function(format, warg)
+      local args = vicious.widgets.bat(format, warg)
+      if args[2] < 50 then
+        args['{color}'] = 'red'
+      else
+        args['{color}'] = 'green'
+      end
+      return args
+    end, '<span foreground="${color}">bat: $2%</span>', 10, 'BAT0')
+    --vicious.register(battext, vicious.widgets.bat, "$1")
+
     cputext = wibox.widget.textbox()
     vicious.register(cputext, vicious.widgets.cpu, " $1% ")
 
+    cputext:buttons(awful.util.table.join(
+     awful.button({ }, 1, function () awful.util.spawn_with_shell("echo Left mouse button pressed.") end)
+    ))
+
+
     cpugraph = awful.widget.graph()
-    -- Graph properties
     cpugraph:set_width(50)
     cpugraph:set_background_color("#494B4F")
     cpugraph:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, {1, "#AECF96" }}})
@@ -205,7 +221,6 @@ for s = 1, screen.count() do
     vicious.register(memtext, vicious.widgets.mem, " $2MB ", 10)
 
     memgraph = awful.widget.progressbar()
-    -- Progressbar properties
     memgraph:set_width(8)
     memgraph:set_height(10)
     memgraph:set_vertical(true)
@@ -229,6 +244,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(battery_text)
     right_layout:add(cputext)
     right_layout:add(cpugraph)
     right_layout:add(memtext)

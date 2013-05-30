@@ -17,6 +17,7 @@
 --ruby
 --rake
 --shell
+--python
 #--text
 --xml
 --vim
