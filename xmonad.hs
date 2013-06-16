@@ -85,7 +85,7 @@ myActiveBorderColor = "#5E8D87"
 myBitmapsPath = "/home/josh/.icons/"
 
 -- Font
-myFont = "Monaco:size=8"
+myFont = "Monaco:size=10"
 {-myFont = "-*-PixelCarnageMono-*-*-*-*-11-*-*-*-*-*-*-*"-}
 {-myFont = "-*-nu-*-*-*-*-*-*-*-*-*-*-*-*"-}
 {-myFont = "-*-dina-*-*-*-*-11-*-*-*-*-*-*-*"-}
@@ -101,7 +101,7 @@ grey = "#999999"
 
 -- dzen general options
 -- 
-myDzenGenOpts = "-fg '" ++ foreground ++ "' -bg '" ++ background ++ "' -h '16'" ++ " -fn '" ++ myFont ++ "'"
+myDzenGenOpts = "-fg '" ++ foreground ++ "' -bg '" ++ background ++ "' -h '20'" ++ " -fn '" ++ myFont ++ "'"
  
 myWorkSpaceBar = "dzen2 -e '' -w 520 -x 0 -y 0 -ta l " ++ myDzenGenOpts
 myStatusBar = "conky -c ~/.conkyrc | dzen2 -e '' -x 965 -y 0 -w 475 -ta r " ++ myDzenGenOpts
