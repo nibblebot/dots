@@ -3,7 +3,6 @@ export EDITOR="vim"
 export TERM='xterm'
 export JAVA_HOME="/usr"
 source $HOME/.aliases
-source /etc/profile.d/z.sh
 autoload -U zmv
 dynamic-colors init
 
