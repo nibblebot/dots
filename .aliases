@@ -19,6 +19,7 @@ alias sc="sudo systemctl"
 alias t='task'
 alias x='atool -x'
 alias ya='yaourt'
+alias p='packer'
 alias pc='sudo pacman'
 alias g='git'
 alias gp='git push'
