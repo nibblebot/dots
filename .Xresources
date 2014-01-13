@@ -16,8 +16,8 @@ URxvt.letterSpace: 0
 !URxvt.font: -*-dina-medium-r-normal-*-12-*-*-*-*-*-*-*
 !URxvt.font: -*-gohufont-medium-r-normal-*-11-*-*-*-*-*-*-*
 !URxvt.boldFont: -*-gohufont-medium-r-normal-*-11-*-*-*-*-*-*-*
-URxvt.font: xft:Consolas:size=9
-URxvt.boldFont: xft:Consolas:bold:size=9
+URxvt.font: xft:Consolas:size=10
+URxvt.boldFont: xft:Consolas:bold:size=10
 !URxvt.font: xft:Anonymous Pro:size=9
 URxvt.iso14755 : false
 
