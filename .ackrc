@@ -10,6 +10,7 @@
 --type-set=less=.less
 --handlebars
 --coffee
+--less
 --js
 --css
 --html
@@ -18,6 +19,7 @@
 --rake
 --shell
 --python
+--sass
 #--text
 --xml
 --vim
