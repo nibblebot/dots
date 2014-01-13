@@ -82,7 +82,7 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = { 'home', 'dev', 'term', 'im', 'music', 'vm', 7, 8, 'carmen' },
+    names = { 'home', 'dev', 'term', 'im', 'music', 'vm', 7, 8 },
     layout = { 
       layouts[2],
       layouts[2],
