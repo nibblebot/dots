@@ -1,43 +1,40 @@
 [alias]
-	cm = commit -m
-	ca = commit --amend
-	s = status -sb
-	b = branch
-	co = checkout
-	d = diff
-    ds = diff --stat
-    cp = cherry-pick
-	l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	all = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
-	tree = log --graph --decorate --pretty=oneline --abbrev-commit
-    cb = create-branch
-    db = delete-branch
+  cm = commit -m
+  ca = commit --amend
+  s = status -sb
+  b = branch
+  co = checkout
+  d = diff
+  ds = diff --stat
+  cp = cherry-pick
+  l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  all = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  cb = create-branch
+  db = delete-branch
 [user]
-	name = Joshua Hanson
-	email = nibblebot@gmail.com
+  name = Joshua Hanson
+  email = nibblebot@gmail.com
 [color]
-        diff = auto
-        status = auto
-        branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [push]
-    default = upstream
+  default = upstream
 [clean]
-        requireForce = false
+  requireForce = false
 [rerere]
-        enabled = true
+  enabled = true
 [merge]
-	tool = diffmerge
-[mergetool "macvimdiff"]
-	cmd = mvim -f -c "Gdiff" "$MERGED"
-    keepbackup=false
+  tool = diffmerge
 [mergetool "diffmerge"]
-	cmd = diffmerge --merge --result="$MERGED" "$LOCAL" "$BASE" "$REMOTE"
-	trustexitcode = false
+  cmd = diffmerge --merge --result="$MERGED" "$LOCAL" "$BASE" "$REMOTE"
+  trustexitcode = false
 [diff]
-	tool = diffmerge
+  tool = diffmerge
 [difftool "diffmerge"]
-	cmd = diffmerge "$LOCAL" "$REMOTE"
+  cmd = diffmerge "$LOCAL" "$REMOTE"
 [core]
-	editor = vim
+  editor = vim
 [mergetool "vimdiff3"]
-	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+  cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
