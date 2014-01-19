@@ -8,6 +8,7 @@
 --type-set=handlebars=.handlebars
 --type-set=coffee=.coffee
 --type-set=less=.less
+--cc
 --handlebars
 --coffee
 --js
