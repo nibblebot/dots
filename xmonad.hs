@@ -25,8 +25,8 @@ import System.IO
 import System.Exit
 
 main = do
-    wsBar <- spawnPipe myWorkSpaceBar
-    statusBar <- spawnPipe myStatusBar
+    {-wsBar <- spawnPipe myWorkSpaceBar-}
+    {-statusBar <- spawnPipe myStatusBar-}
     xmonad $ ewmh desktopConfig
         { terminal = myTerminal
         , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
@@ -35,19 +35,19 @@ main = do
         , normalBorderColor = myInactiveBorderColor
         , focusedBorderColor = myActiveBorderColor
         , logHook = do
-            myLogHook wsBar
+            {-myLogHook wsBar-}
             logHook desktopConfig
         , workspaces = myWorkspaces
         }
         `additionalKeysP` myKeysP
-        `additionalKeys`
-        [ ((0, xF86XK_AudioLowerVolume), spawn "/home/josh/bin/dvol lower")
-        , ((0, xF86XK_AudioRaiseVolume), spawn "/home/josh/bin/dvol raise")
-        , ((0, xF86XK_AudioMute), spawn "/home/josh/bin/dvol toggle")
-        ]
+        {-`additionalKeys`-}
+        {-[ ((0, xF86XK_AudioLowerVolume), spawn "/home/josh/bin/dvol lower")-}
+        {-, ((0, xF86XK_AudioRaiseVolume), spawn "/home/josh/bin/dvol raise")-}
+        {-, ((0, xF86XK_AudioMute), spawn "/home/josh/bin/dvol toggle")-}
+        {-]-}
 
 myKeysP = 
-    [ ("C-M-q", spawn "killall conky dzen2; xmonad --recompile && xmonad --restart")
+    [ ("C-M-q", spawn "xmonad --recompile && xmonad --restart")
     , ("C-S-M-q", io (exitWith ExitSuccess))
     , ("M-b", sendMessage ToggleStruts)
     ] 
