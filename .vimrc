@@ -10,25 +10,22 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nono/vim-handlebars'
 Bundle 'less-syntax'
-Bundle 'w0ng/vim-hybrid'
-"Bundle 'Handlebars'
+Bundle 'groenewege/vim-less'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'nibblebot/google-closure-linter-for-vim'
 Bundle 'The-NERD-tree'
 "Bundle 'repeat.vim'
 "Bundle 'matchit.zip'
-Bundle 'Raimondi/delimitMate'
+"Bundle 'Raimondi/delimitMate'
 Bundle 'ack.vim'
 "Bundle 'EasyGrep'
 "Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
+"Bundle 'tpope/vim-surround'
 "Bundle 'juvenn/mustache.vim'
-Bundle 'UltiSnips'
-Bundle 'ZoomWin'
-Bundle 'groenewege/vim-less'
+"Bundle 'UltiSnips'
+"Bundle 'ZoomWin'
 "Bundle 'Command-T'
 "Bundle 'briancollins/vim-jst'
 "Bundle 'pangloss/vim-javascript'
@@ -36,6 +33,9 @@ Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 "Bundle 'jnwhiteh/vim-golang'
 "Bundle 'mattn/zencoding-vim'
+"Bundle 'john2x/flatui.vim'
+Bundle 'chriskempson/base16-vim'
+
 
 
 filetype plugin indent on     " required!
@@ -70,8 +70,11 @@ set ttimeoutlen=0
 set t_Co=256
 "let g:hybrid_use_Xresources = 1
 "colorscheme hybrid
-colorscheme solarized
-set background=dark
+"colorscheme default
+"colorscheme solarized
+"colorscheme tomorrow
+colorscheme raven-light
+set background=light
 
 
 " FORMATTING
@@ -159,7 +162,7 @@ au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.ejs set ft=jst
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 
 " BUFFERS
 set hidden " Allow buffer switching for unsaved buffers
