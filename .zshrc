@@ -1,13 +1,6 @@
-export PATH="$PATH:$HOME/.dynamic-colors/bin:$HOME/bin"
-export EDITOR="vim"
-export TERM='xterm'
 export JAVA_HOME="/usr"
 source $HOME/.aliases
 autoload -U zmv
-dynamic-colors init
-
-source $HOME/.dynamic-colors/completions/dynamic-colors.zsh
-eval `dircolors /etc/dir_colors`
 
 setopt auto_name_dirs
 setopt auto_pushd
@@ -368,5 +361,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%})%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-source /usr/share/doc/pkgfile/command-not-found.zsh
+#source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
