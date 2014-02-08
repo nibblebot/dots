@@ -71,10 +71,10 @@ set t_Co=256
 "let g:hybrid_use_Xresources = 1
 "colorscheme hybrid
 "colorscheme default
-"colorscheme solarized
+colorscheme solarized
 "colorscheme tomorrow
-colorscheme raven-light
-set background=light
+"colorscheme raven-light
+set background=dark
 
 
 " FORMATTING
