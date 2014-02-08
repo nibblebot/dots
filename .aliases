@@ -30,13 +30,7 @@ alias gri='git rebase -i master'
 alias xres='e ~/.Xresources && xrdb ~/.Xresources'
 alias aliases='e ~/.aliases && source ~/.aliases'
 alias keys='e ~/.config/sxhkd/sxhkdrc'
-alias wm='e ~/.config/bspwm/bspwmrc && sh ~/.config/bspwm/bspwmrc'
-
-alias yclean='yaourt -Qtd'
-alias yup='yaourt -Syua'
-
-alias light="dynamic-colors switch solarized-light"
-alias dark="dynamic-colors switch solarized-dark"
+alias wm='e ~/.config/openbox/rc.xml && openbox --reconfigure'
 
 f() {
     find . -iname "*$1*"
