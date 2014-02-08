@@ -25,18 +25,7 @@
   requireForce = false
 [rerere]
   enabled = true
-[merge]
-  tool = diffmerge
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge --result="$MERGED" "$LOCAL" "$BASE" "$REMOTE"
-  trustexitcode = false
-[diff]
-  tool = diffmerge
-[difftool "diffmerge"]
-  cmd = diffmerge "$LOCAL" "$REMOTE"
 [core]
   editor = vim
-[mergetool "vimdiff3"]
-  cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [credential]
 	helper = cache --timeout=3600
