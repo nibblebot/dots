@@ -3,7 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias _='sudo'
 alias history='fc -l 1'
-#alias ls='ls --group-directories-first'
+alias ls='ls --color=tty --group-directories-first'
 alias l='ls -1'
 alias la='ls -lA1h'
 alias lt='ls -ltr'
@@ -16,25 +16,19 @@ alias -g NF='*(.om[1])' # newest file
 alias vm="ssh root@bitly.org"
 alias r='ranger'
 alias sc="sudo systemctl"
-alias t='todo.sh'
 alias x='atool -x'
-alias ya='yaourt'
-alias pc='sudo pacman'
-alias pca='pacaur'
+alias pac='sudo pacman'
+alias aur='pacaur --aur --votes'
 alias g='git'
 alias gp='git push'
 alias gpf='git push -f'
 alias gpp='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gpr='hub pull-request -b "bitly:master"'
 alias gri='git rebase -i master'
-alias xres='e ~/.Xresources && xrdb ~/.Xresources'
 alias aliases='e ~/.aliases && source ~/.aliases'
-alias keys='e ~/.config/sxhkd/sxhkdrc'
 alias wm='e ~/.config/openbox/rc.xml && openbox --reconfigure'
 
-f() {
-    find . -iname "*$1*"
-}
+f() { find . -iname "*$1*" }
 
 p() {
   if [[ $# -eq 1 ]]; then
@@ -51,14 +45,6 @@ dot() {
     echo "$1 moved to $NEW"
 }
 
-bfont() {
-    printf '\33]710;%s\007' "-*-${1}-*-*-*-*-11-*-*-*-*-*-iso8859-*"
-    #printf '\33]711;%s\007' "-*-${1}-*-*-*-*-11-*-*-*-*-*-iso8859-*"
-}
-font() {
-    printf '\33]710;%s\007' "xft:${1}:size=10"
-    printf '\33]711;%s\007' "xft:${1}:bold:size=10"
-}
 man() {
   env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
     LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -69,4 +55,14 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
 	man "$@"
 }
+
+function zsh_stats() {
+  history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n20
+}
+
+function mcd() {
+  mkdir -p $1
+  cd $1
+}
+
 # vim: set ft=sh:
