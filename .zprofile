@@ -8,4 +8,6 @@ export BSPWM_SOCKET="/tmp/bspwm-socket"
 export SXHKD_SHELL="/bin/dash"
 export PANEL_LEFT_FIFO="/tmp/panel-left-fifo"
 export PANEL_RIGHT_FIFO="/tmp/panel-right-fifo"
+
+eval $(ssh-agent)
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
