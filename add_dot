@@ -1,0 +1,4 @@
+#!/bin/bash
+echo $1
+mv "$1" ./
+ln --symbolic --verbose --force "$PWD/"$(basename $1) "$HOME"
