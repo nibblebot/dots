@@ -27,6 +27,9 @@ alias gpr='hub pull-request -b "bitly:master"'
 alias gri='git rebase -i master'
 alias aliases='e ~/.aliases && source ~/.aliases'
 alias wm='e ~/.config/openbox/rc.xml && openbox --reconfigure'
+alias xres='e ~/.Xresources && xrdb ~/.Xresources'
+alias keys='e ~/.config/sxhkd/sxhkdrc'
+
 
 f() { find . -iname "*$1*" }
 

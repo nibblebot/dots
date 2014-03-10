@@ -1,4 +1,4 @@
-#include "/home/josh/.colors/tomorrow"
+#include "/home/josh/.colors/solarized-light"
 
 Xft.autohint:	0
 Xft.lcdfilter:	lcddefault
@@ -18,8 +18,8 @@ urxvt*internalBorder: 4
 !URxvt.letterSpace: -1
 !URxvt.letterSpace: 0
 
-URxvt.font: xft:Cousine:size=10
-URxvt.boldFont: xft:Cousine:bold:size=10
+URxvt.font: xft:Cousine:size=8
+URxvt.boldFont: xft:Cousine:bold:size=8
 URxvt.iso14755 : false
 URxvt.saveLines: 8192 
 URxvt.perl-ext-common: default,matcher,vtwheel,clipboard,font-size
