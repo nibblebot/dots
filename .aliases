@@ -26,9 +26,9 @@ alias gpp='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gpr='hub pull-request -b "bitly:master"'
 alias gri='git rebase -i master'
 alias aliases='e ~/.aliases && source ~/.aliases'
-alias wm='e ~/.config/openbox/rc.xml && openbox --reconfigure'
-alias xres='e ~/.Xresources && xrdb ~/.Xresources'
-alias keys='e ~/.config/sxhkd/sxhkdrc'
+#alias xres='e ~/.Xresources && xrdb ~/.Xresources'
+#alias wm='e ~/.config/bspwm/bspwmrc && pkill -x panel; source ~/.config/bspwm/bspwmrc'
+#alias keys='e ~/.config/sxhkd/sxhkdrc && pkill -USR1 -x sxhkd'
 
 
 f() { find . -iname "*$1*" }

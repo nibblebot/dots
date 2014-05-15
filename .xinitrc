@@ -21,6 +21,7 @@ start-pulseaudio-x11 &
 xmodmap ~/.Xmodmap
 xsetroot -cursor_name left_ptr
 xset r rate 200 30
+xset m 1 0 # no acceleration
 urxvtd -q -f -o &
 redshiftgui --min &
 compton &

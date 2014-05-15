@@ -3,6 +3,7 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -14,7 +15,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'The-NERD-tree'
 "Bundle 'repeat.vim'
 "Bundle 'matchit.zip'
@@ -34,7 +34,10 @@ Bundle 'kchmck/vim-coffee-script'
 "Bundle 'jnwhiteh/vim-golang'
 "Bundle 'mattn/zencoding-vim'
 "Bundle 'john2x/flatui.vim'
-Bundle 'chriskempson/base16-vim'
+"Bundle 'chriskempson/base16-vim'
+"
+Bundle 'Lokaltog/powerline'
+"Bundle 'bling/vim-airline'
 
 
 
@@ -43,6 +46,7 @@ syntax on
 
 let mapleader = ','
 "let delimitMate_no_esc_mapping = 1
+let g:airline_powerline_fonts = 1
 
 set wildignore+=*/node_modules/*
 
@@ -71,10 +75,10 @@ set t_Co=256
 "let g:hybrid_use_Xresources = 1
 "colorscheme hybrid
 "colorscheme default
-colorscheme solarized
-"colorscheme tomorrow
+"colorscheme solarized
+colorscheme tomorrow
+set background=light
 "colorscheme raven-light
-set background=dark
 
 
 " FORMATTING

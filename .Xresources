@@ -18,8 +18,13 @@ urxvt*internalBorder: 4
 !URxvt.letterSpace: -1
 !URxvt.letterSpace: 0
 
-URxvt.font: xft:Cousine:size=8
-URxvt.boldFont: xft:Cousine:bold:size=8
+URxvt.font: xft:Liberation Mono for Powerline:size=8
+!URxvt.font: xft:Anonymous Pro:size=11
+!URxvt.font: xft:Deja Vu Sans Mono:size=11
+!URxvt.font: xft:Cousine:size=8
+!URxvt.boldFont: xft:Cousine:bold:size=11
+!URxvt.font: xft:Anonymous Pro for Powerline:size=8
+!URxvt.boldFont: xft:Anonymous Pro for Powerline:bold:size=8
 URxvt.iso14755 : false
 URxvt.saveLines: 8192 
 URxvt.perl-ext-common: default,matcher,vtwheel,clipboard,font-size
