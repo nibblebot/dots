@@ -1,317 +1,65 @@
 set noesckeys   " don't wait for esc timeout * MUST BE BEFORE nocompatible
 set nocompatible               " be iMproved
 filetype off                   " required!
+set rtp+=/home/josh/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Let Vundle manage itself
+Bundle 'gmarik/Vundle.vim'
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'gregsexton/MatchTag'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'nono/vim-handlebars'
-Bundle 'less-syntax'
-Bundle 'groenewege/vim-less'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'The-NERD-Commenter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'The-NERD-tree'
-"Bundle 'repeat.vim'
-"Bundle 'matchit.zip'
-"Bundle 'Raimondi/delimitMate'
+" Buffers
+Plugin 'fholgado/minibufexpl.vim'
+
+" HTML
+Plugin 'gregsexton/MatchTag'
+
+" Comments
+Plugin 'The-NERD-Commenter'
+
+" Fuzzy File finder
+Plugin 'kien/ctrlp.vim'
+
+" Nicer Sidebar File Explorer
+Bundle 'scrooloose/nerdtree'
+
+" Search files
 Bundle 'ack.vim'
-"Bundle 'EasyGrep'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-surround'
-"Bundle 'juvenn/mustache.vim'
-"Bundle 'UltiSnips'
-"Bundle 'ZoomWin'
-"Bundle 'Command-T'
-"Bundle 'briancollins/vim-jst'
-"Bundle 'pangloss/vim-javascript'
-"Bundle 'bigfish/vim-js-beautify'
+
+" Tmux Integration
+Bundle 'christoomey/vim-tmux-navigator'
+
+" MAYBE USE THESE LATER
+"Plugin 'repeat.vim'
+"Plugin 'matchit.zip'
+"Plugin 'Raimondi/delimitMate'
+"Plugin 'EasyGrep'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-surround'
+"Plugin 'juvenn/mustache.vim'
+"Plugin 'UltiSnips'
+"Plugin 'ZoomWin'
+"Plugin 'Command-T'
+"Plugin 'briancollins/vim-jst'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'bigfish/vim-js-beautify'
+"Plugin 'jnwhiteh/vim-golang'
+"Plugin 'mattn/zencoding-vim'
+"Plugin 'john2x/flatui.vim'
+"Plugin 'chriskempson/base16-vim'
+"Plugin 'bling/vim-airline'
+
+" Syntax Highlighting
 Bundle 'kchmck/vim-coffee-script'
-"Bundle 'jnwhiteh/vim-golang'
-"Bundle 'mattn/zencoding-vim'
-"Bundle 'john2x/flatui.vim'
-"Bundle 'chriskempson/base16-vim'
-"
-Bundle 'Lokaltog/powerline'
-"Bundle 'bling/vim-airline'
+Bundle 'nono/vim-handlebars'
 
+" Color Schemes
+Bundle 'altercation/vim-colors-solarized'
 
-
+call vundle#end()
 filetype plugin indent on     " required!
+
 syntax on
-
 let mapleader = ','
-"let delimitMate_no_esc_mapping = 1
-let g:airline_powerline_fonts = 1
-
-set wildignore+=*/node_modules/*
-
-map <Leader>r :%s/<C-r>"/
-
-" Buffer Switch
-map <Leader>a :bp<CR>
-map <Leader>s :bn<CR>
-" CtrlP
-"let g:ctrlp_map = '<leader>p'
-map <Leader>p :CtrlP<CR>
-map <Leader>b :CtrlPBuffer<CR>
-" nearest VCS root, starting from CWD
-"let g:ctrlp_working_path_mode = 'wra'
-let g:ctrlp_working_path_mode = '0'
-
-"let loaded_minibufexplorer = 1 "Disable MBExplorer
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" don't delay when escaping from insert modes
-set ttimeoutlen=0
-" Color
-set t_Co=256
-"let g:hybrid_use_Xresources = 1
-"colorscheme hybrid
-"colorscheme default
-"colorscheme solarized
-colorscheme tomorrow
-set background=light
-"colorscheme raven-light
-
-
-" FORMATTING
-set autoindent " Maintain indent
-set smartindent " Indent further within code blocks
-set ts=2 sts=2 sw=2
-autocmd Filetype python setl ts=4 sts=4 sw=4
-autocmd Filetype coffee setl foldmethod=indent nofoldenable
-"au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable ts=2 sts=2 sw=2
-"autocmd Filetype js setlocal makeprg=gjslint\ %
-"autocmd Filetype js setlocal errorformat=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
-set expandtab " Tabs are spaces!
-set backspace=indent,eol,start	" backspace for dummys
-set linespace=0					" No extra spaces between rows
-"let delimitMate_expand_cr = 1
-set virtualedit=onemore				" allow for cursor beyond last character
-set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
-
-" SEARCH
-set showmatch "Show matching brackets
-set incsearch "Incremental searches
-set hlsearch "Highlight search results
-
-set ignorecase					" case insensitive search
-set smartcase					" case sensitive when uc present
-set gdefault					" the /g flag on :s substitutions by default
-"clearing highlighted search
-nmap <silent> <leader>/ :nohlsearch<CR>
-"nmap <silent> <leader>d /<<<<<<<<CR>
-
-
-set mouse=a					" automatically enable mouse usage
-
-
-" Plugin Config
-"" NERDTree
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.pyc$', '\~$']
-let g:NERDTreeMinimalUI=1
-
-
-nmap <Leader>t :NERDTreeToggle<CR>
-" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
-" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-"
-"
-"" ZoomWin
-"map <Leader><Leader> :ZoomWin<CR>
-
-"" MiniBufExplorer
-"let g:miniBufExplMaxSize = 1
-let g:miniBufExplorerMoreThanOne=2
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapCTabSwitchBufs = 0
-"let g:miniBufExplShowBufNumbers = 0
-let g:statusLineText='%{getcwd()}'          " current dir
-let g:miniBufExplCheckDupeBufs = 0
-
-let g:miniBufExplUseSingleClick = 1
-"let g:miniBufExplForceSyntaxEnable = 1
-
-"" Unimpaired
-" Bubble single lines
-"nmap <C-Up> [e
-"nmap <C-Down> ]e
-" Bubble multiple lines
-"vmap <C-Up> [egv
-"vmap <C-Down> ]egv
-
-"" Syntastic syntax checking
-"let g:syntastic_enable_signs=1
-"let g:syntastic_quiet_warnings=1
-
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-au BufNewFile,BufRead *.ejs set ft=jst
-
-" Use the same symbols as TextMate for tabstops and EOLs
-"set listchars=tab:▸\ ,eol:¬
-
-" BUFFERS
-set hidden " Allow buffer switching for unsaved buffers
-map <C-e> :bp<CR>:silent! bd! #<CR>
-
-" WINDOWS
-set winminheight=0				" windows can be 0 line high
-map <C-q> :silent! hide<CR>
-
-" Disable silly bells
-set noerrorbells visualbell t_vb=
-
-" BACKUPS
-set backup						" backups are nice ...
-"au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
-"au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
-
-" CURSOR
-set cursorline					" highlight current line
-hi cursorline guibg=#CECCEC		" highlight bg color of current line
-hi CursorColumn guibg=#333333   " highlight cursor
-set scrolljump=5					" lines to scroll when cursor leaves screen
-set scrolloff=5					" minimum lines to keep above and below cursor
-
-" Command Line
-if has('cmdline_info')
-	set ruler										" show the ruler
-	set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-	set showcmd									" show partial commands in status line and
-	" selected characters/lines in visual mode
-endif
-set wildmenu					" show list instead of just completing
-set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
-
-" SESSION
-set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
-set history=1000					" Store a ton of history (default is 20)
-
-" STATUS
-set number
-set shortmess+=filmnrxoOtTI			" abbrev. of messages (avoids 'hit enter')
-set showmode										" display the current mode
-if has('statusline')
-	set laststatus=2
-
-	" Broken down into easily includeable segments
-	set statusline=%<%f\    " Filename
-	set statusline+=%w%h%m%r " Options
-	"set statusline+=%{fugitive#statusline()} "  Git Hotness
-	set statusline+=\ [%{&ff}/%Y]            " filetype
-	set statusline+=\ [%{getcwd()}]          " current dir
-	"set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-
-
-""" Code folding options
-"set foldmethod=syntax
-"set nofoldenable
-"set foldlevel=10
-
-function! JavaScriptFold()
-    setl foldmethod=syntax
-    setl foldlevel=99
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-au FileType javascript call JavaScriptFold()
-"au FileType javascript setl fen
-
-
-" Key (re)Mappings {
-
-" No need to use shift to execute commands
-nnoremap ; :
-
-""" EDITING
-" Retabulate
-map <F12> m`ggVG=``
-nmap <leader>j :JSBeautify<cr>
-
-map <F11> :%s/!/#:%s/*//:%s/: /=
-
-" Insert line breaks easily
-map <S-CR> m`o<ESC>``
-
-" visual shifting (does not exit Visual mode)
-vnoremap < <gv
-vnoremap > >gv
-
-"remove empty lines
-map <F6> :%s/\s\+$//e<CR> 
-
-" select all
-map <Leader>A ggVG
-
-"Ack
-map <Leader>f :Ack <C-r>"<CR>
-""" FILES
-"Change Working Directory to that of the current file
-cmap cd. cd %:p:h
-
-" For when you forget to sudo.. Really Write the file.
-cmap w!! w !sudo tee % >/dev/null
-
-" Opens an edit command with the path of the currently edited file filled in
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-function! InitializeDirectories()
-	let separator = "."
-	let parent = $HOME
-	let prefix = '.vim'
-	let dir_list = {
-				\ 'backup': 'backupdir',
-				\ 'views': 'viewdir',
-				\ 'swap': 'directory' }
-
-	for [dirname, settingname] in items(dir_list)
-		let directory = parent . '/' . prefix . dirname . "/"
-		if exists("*mkdir")
-			if !isdirectory(directory)
-				call mkdir(directory)
-			endif
-		endif
-		if !isdirectory(directory)
-			echo "Warning: Unable to create backup directory: " . directory
-			echo "Try: mkdir -p " . directory
-		else
-			let directory = substitute(directory, " ", "\\\\ ", "")
-			exec "set " . settingname . "=" . directory
-		endif
-	endfor
-endfunction
-call InitializeDirectories()
-
-command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
-function! QuickfixFilenames()
-  " Building a hash ensures we get each buffer only once
-  let buffer_numbers = {}
-  for quickfix_item in getqflist()
-    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
-  endfor
-  return join(values(buffer_numbers))
-endfunction
