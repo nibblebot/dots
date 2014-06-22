@@ -15,14 +15,23 @@ urxvt*cursorBlink:true
 urxvt*scrollBar:false
 urxvt*internalBorder: 4
 
-!URxvt.letterSpace: -1
+URxvt.letterSpace: -1
 !URxvt.letterSpace: 0
 
-URxvt.font: xft:Liberation Mono for Powerline:size=8
+!URxvt.font: 9x15
+!URxvt.boldFont: 9x15bold
+!URxvt*font: xft:terminus:pixelsize=15
+!URxvt*boldfont: xft:terminus:bold:pixelsize=15
+!URxvt.font: xft:Liberation Mono for Powerline:size=8
 !URxvt.font: xft:Anonymous Pro:size=11
-!URxvt.font: xft:Deja Vu Sans Mono:size=11
-!URxvt.font: xft:Cousine:size=8
-!URxvt.boldFont: xft:Cousine:bold:size=11
+!URxvt.font: xft:Deja Vu Sans Mono:size=9
+!URxvt.boldFont: xft:Deja Vu Sans Mono:bold:size=9
+!URxvt.font: 9x15
+!URxvt.boldFont: 9x15bold
+!URxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
+!URxvt.boldFont: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
+URxvt.font: xft:Cousine:size=8
+URxvt.boldFont: xft:Cousine:bold:size=8
 !URxvt.font: xft:Anonymous Pro for Powerline:size=8
 !URxvt.boldFont: xft:Anonymous Pro for Powerline:bold:size=8
 URxvt.iso14755 : false
