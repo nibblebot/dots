@@ -11,7 +11,7 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && type dbus-launch >/dev/null; then
   eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
 
-xrandr --output HDMI-0 --left-of DVI-0
+xrandr --output HDMI-0 --right-of DVI-0
 
 hsetroot -solid "#fff1ca"
 
@@ -22,8 +22,13 @@ xmodmap ~/.Xmodmap
 xsetroot -cursor_name left_ptr
 xset r rate 200 30
 xset m 1 0 # no acceleration
-urxvtd -q -f -o &
+#urxvtd -q -f -o &
 redshiftgui --min &
 compton &
 sxhkd &
+#exec openbox-session
+#exec i3
 exec bspwm
+#exec monsterwm
+#exec monsterwm2bar
+#exec startdwm

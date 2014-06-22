@@ -11,6 +11,3 @@ export PAGER="less"
 export LESS="-R"
 
 export LC_CTYPE=$LANG
-
-# ssh-agent
-eval $(ssh-agent)
