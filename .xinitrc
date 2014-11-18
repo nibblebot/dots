@@ -11,24 +11,29 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && type dbus-launch >/dev/null; then
   eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
 
-xrandr --output HDMI-0 --right-of DVI-0
-
-hsetroot -solid "#fff1ca"
+xrandr --output DVI-0 --primary --left-of HDMI-0
+eval $(cat ~/.fehbg)&
 
 xset +fp /usr/share/fonts/local
 xrdb -merge ~/.Xresources
-start-pulseaudio-x11 &
 xmodmap ~/.Xmodmap
 xsetroot -cursor_name left_ptr
 xset r rate 200 30
 xset m 1 0 # no acceleration
-#urxvtd -q -f -o &
-redshiftgui --min &
-compton &
-sxhkd &
-#exec openbox-session
-#exec i3
-exec bspwm
-#exec monsterwm
-#exec monsterwm2bar
+start-pulseaudio-x11 2> ~/.logs/pulseaudio&
+pactl set-sink-port 0 analog-output-lineout
+
+redshiftgui --min 2> ~/.logs/redshift &
+compton 2> ~/.logs/compton &
+synapse --startup &
+#plank 2> ~/.logs/plank&
+#tint2 2> ~/.logs/tint2&
+volumeicon ~/.logs/volumeicon &
+urxvtd &
+
+sxhkd 2> ~/.logs/sxhkd &
+
 #exec startdwm
+exec bspwm 2> ~/.logs/bspwm
+#exec openbox-session 2> ~/.logs/openbox
+#exec wingo 2> ~/.logs/wingo

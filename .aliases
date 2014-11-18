@@ -1,9 +1,11 @@
+#!/usr/bin/env bash
 alias ..='cd ..'
 alias ...='cd ../..'
 alias _='sudo'
 alias aliases='e ~/.bash_aliases && source ~/.bash_aliases'
 alias aur='pacaur --aur --votes'
 alias cl='clear'
+alias df='df -h'
 alias e="$EDITOR"
 alias g='git'
 alias gp='git push'
@@ -13,26 +15,39 @@ alias gpr='hub pull-request -b "bitly:master"'
 alias gri='git rebase -i master'
 alias l='ls -1'
 alias la='ls -lA1h'
+alias ll='ls -l'
 alias ls='ls --color=tty --group-directories-first'
 alias lt='ls -ltr'
 alias md='mkdir -p'
+alias netctl='sudo netctl'
 alias o='owlman'
 alias pac='sudo pacman'
 alias r='ranger'
 alias sc="sudo systemctl"
 alias se="sudo $EDITOR"
+alias ta='tmux attach -d'
+alias tl='tmux ls'
+alias tn='tmux new'
 alias vm="ssh root@bitly.org"
 alias x='atool -x'
 alias xres='e ~/.Xresources && xrdb ~/.Xresources'
 
+alias redwm='cd ~/builds/dwm; updpkgsums; makepkg -efi --noconfirm; killall dwm'
+
+bin() {
+  pushd ~/bin >/dev/null
+  $EDITOR "$1"
+  chmod u+x "$1"
+  popd >/dev/null
+}
 conf() {
   pushd ~/.conf >/dev/null
   $EDITOR "$@"
   popd >/dev/null
 }
 
-f() { 
-  find . -iname "*$1*" 
+f() {
+  find . -iname "*$1*"
 }
 
 p() {
@@ -55,10 +70,8 @@ man() {
     LESS_TERMCAP_md=$(printf "\e[1;31m") \
     LESS_TERMCAP_me=$(printf "\e[0m") \
     LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_so=$(printf "\e[0m") \
     LESS_TERMCAP_ue=$(printf "\e[0m") \
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
 	man "$@"
 }
-
-#vim:ft=sh
