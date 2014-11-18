@@ -1,21 +1,24 @@
 #!/usr/bin/env bash
 
-mleft=DVI-0
-mright=HDMI-0
+#mleft=DVI-0
+#mright=HDMI-0
 
-bspc monitor $mleft --reset-desktops web dev term vm config games 7 8 9 0
-bspc monitor $mright --reset-desktops chat media F3 F4
-bspc desktop chat --toggle floating=on
+bspc monitor --reset-desktops 1 2 3 4 5 6 7 8 9 0
+#bspc monitor $mleft --reset-desktops web dev term vm config games 7 8 9 0
+#bspc monitor $mright --reset-desktops chat media F3 F4
+#bspc desktop chat --toggle floating=on
 
-bspc config border_width 4
-bspc config window_gap 10
+bspc config border_width 1
+bspc config window_gap 0
 
 bspc config split_ratio         0.52
 
-bspc config -m $mleft top_padding     20
-bspc config -m $mleft bottom_padding  0
-bspc config -m $mright top_padding     0
-bspc config -m $mright bottom_padding  0
+bspc config -m top_padding     0
+bspc config -m bottom_padding  0
+#bspc config -m $mleft top_padding     20
+#bspc config -m $mleft bottom_padding  0
+#bspc config -m $mright top_padding     0
+#bspc config -m $mright bottom_padding  0
 
 bspc config focused_border_color "#f1c40f"
 
@@ -30,7 +33,7 @@ bspc config gapless_monocle      true
 # RULES
 for r in $(bspc rule -l); do bspc rule -r tail; done
 
-bspc rule -a * floating=on
+#bspc rule -a * floating=on
 #bspc rule -a Skype desktop=chat
 #bspc rule -a Pidgin desktop=chat
 #bspc rule -a bitly.hipchat.com__chat desktop=chat
@@ -39,5 +42,5 @@ bspc rule -a * floating=on
 #bspc rule -a Synapse border=off
 
 
-bspwm_panel DVI-0 &
-bspwm_panel HDMI-0 &
+#bspwm_panel DVI-0 &
+#bspwm_panel HDMI-0 &
