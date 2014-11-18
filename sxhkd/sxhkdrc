@@ -1,0 +1,105 @@
+# bspwm hotkeys
+
+# Reload SXHKD RC
+alt + Escape
+    pkill -USR1 -x sxhkd
+
+# Reload BSPWM RC
+alt + ctrl + Escape
+    pkill -f "bash $(which bspwm_panel)"; source ~/.config/bspwm/bspwmrc
+
+# Quit
+alt + super + Escape
+    pkill -f "bash $(which bspwm_panel)"; bspc quit
+
+alt + a
+    bspc desktop --toggle floating
+
+alt + w
+    bspc window --close
+
+alt + t
+    bspc desktop --layout next
+
+alt + b
+    bspc desktop --balance
+
+alt + o
+    bspc monitor --focus next
+
+alt + {s,f}
+    bspc window --toggle {floating,fullscreen}
+
+alt + {grave,Tab}
+    bspc {window,desktop} --focus last
+
+alt + apostrophe
+    bspc window --swap last
+
+alt + m
+    bspc window --swap biggest
+
+alt + {_,shift + }{h,j,k,l}
+    bspc window --{focus,swap} {left,down,up,right}
+
+alt + {_,shift + }c
+    bspc window --focus {next,prev}
+
+alt + {comma,period}
+    bspc desktop --circulate {backward,forward}
+
+alt + shift + {comma,period}
+    bspc desktop --rotate {270,90}
+
+alt + bracket{left,right}
+    bspc desktop --focus {prev,next}
+
+alt + ctrl + {h,j,k,l}
+    bspc window --presel {left,down,up,right}
+
+alt + ctrl + shift + {h,j,k,l}
+    bspc window --to-window {left,down,up,right}
+
+alt + ctrl + {_,shift + }space
+    bspc {window --presel cancel,desktop --cancel-presel}
+
+alt + super + {h,j,k,l}
+    bspc window --edge {left -20,down +20,up -20,right +20}
+
+alt + super + shift + {h,j,k,l}
+    bspc window --edge {right -20,up +20,down -20,left +20}
+
+alt + ctrl + {1-9}
+    bspc window --ratio 0.{1-9}
+
+alt + {_,shift + }{1-9,0}
+    bspc {desktop --focus,window --to-desktop} ^{1-9,10}
+
+alt + {_,shift + }{F1,F2,F3,F4}
+    bspc {desktop --focus,window --to-desktop} ^{11,12,13,14}
+
+~button1
+    bspc pointer -g focus
+
+alt + button{1-3}
+    bspc pointer -g {move,resize_side,resize_corner}
+
+alt + !button{1-3}
+    bspc pointer -t %i %i
+
+alt + @button{1-3}
+    bspc pointer -u
+
+alt + d
+    bspc control --toggle-visibility
+#
+# wm independent hotkeys
+#
+Pause
+  sudo systemctl suspend
+
+alt + Return
+    urxvtc
+
+super + space
+    dmenu_run
