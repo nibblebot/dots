@@ -103,3 +103,24 @@ alt + Return
 
 super + space
     dmenu_run
+
+XF86LaunchA
+	toggle_external_monitor
+XF86MonBrightnessDown
+	xbacklight -dec 5
+XF86MonBrightnessUp
+	xbacklight -inc 5
+ctrl + XF86MonBrightnessDown
+	redshift-adjust -50
+ctrl + XF86MonBrightnessUp
+	redshift-adjust +50
+XF86KbdBrightnessDown
+	kbdlight down
+XF86KbdBrightnessUp
+	kbdlight up
+XF86AudioLowerVolume
+	amixer -q sset 'Master' 5%-
+XF86AudioRaiseVolume
+	amixer -q sset 'Master' 5%+
+XF86AudioMute
+	amixer -q sset 'Master' toggle
