@@ -1,10 +1,9 @@
-# bspwm hotkeys
-
 # Reload SXHKD RC
 alt + Escape
     pkill -USR1 -x sxhkd
 
-# Reload BSPWM RC
+# BSPWM
+# Reload
 alt + ctrl + Escape
     pkill -f "bash $(which bspwm_panel)"; source ~/.config/bspwm/bspwmrc
 
@@ -99,7 +98,7 @@ Pause
   sudo systemctl suspend
 
 alt + Return
-    urxvtc
+    urxvt
 
 super + space
     dmenu_run

@@ -4,29 +4,19 @@ filetype off                   " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" Let Vundle manage itself
 Plugin 'gmarik/Vundle.vim'
-
-" Buffers
 Plugin 'fholgado/minibufexpl.vim'
-
-" HTML
 Plugin 'gregsexton/MatchTag'
-
-" Comments
 Plugin 'The-NERD-Commenter'
-
-" Fuzzy File finder
 Plugin 'kien/ctrlp.vim'
-
-" Nicer Sidebar File Explorer
 Plugin 'scrooloose/nerdtree'
-
-" Search files
 Plugin 'ack.vim'
-
-" Tmux Integration
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'nono/vim-handlebars'
+Plugin 'ShowTrailingWhitespace'
+Plugin 'DeleteTrailingWhitespace'
+Plugin 'altercation/vim-colors-solarized'
 
 " MAYBE USE THESE LATER
 "Plugin 'repeat.vim'
@@ -48,15 +38,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'chriskempson/base16-vim'
 "Plugin 'bling/vim-airline'
 
-" Syntax Highlighting
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'nono/vim-handlebars'
-
-Plugin 'ShowTrailingWhitespace'
-Plugin 'DeleteTrailingWhitespace'
-
-" Color Schemes
-Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on     " required!

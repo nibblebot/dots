@@ -11,29 +11,26 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && type dbus-launch >/dev/null; then
   eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
 
-xrandr --output DVI-0 --primary --left-of HDMI-0
-eval $(cat ~/.fehbg)&
+# @DESKTOP
+#xrandr --output DVI-0 --primary --left-of HDMI-0
+#eval $(cat ~/.fehbg)&
+#pactl set-sink-port 0 analog-output-lineout
 
+# @LAPTOP
+external_monitor left
+reset_peripherals
+
+# fonts, terminal, pointers
 xset +fp /usr/share/fonts/local
 xrdb -merge ~/.Xresources
-xmodmap ~/.Xmodmap
 xsetroot -cursor_name left_ptr
-xset r rate 200 30
-xset m 1 0 # no acceleration
-start-pulseaudio-x11 2> ~/.logs/pulseaudio&
-pactl set-sink-port 0 analog-output-lineout
 
-redshiftgui --min 2> ~/.logs/redshift &
-compton 2> ~/.logs/compton &
-synapse --startup &
-#plank 2> ~/.logs/plank&
-#tint2 2> ~/.logs/tint2&
-volumeicon ~/.logs/volumeicon &
-urxvtd &
+start-pulseaudio-x11 &
 
-sxhkd 2> ~/.logs/sxhkd &
-
-#exec startdwm
-exec bspwm 2> ~/.logs/bspwm
-#exec openbox-session 2> ~/.logs/openbox
-#exec wingo 2> ~/.logs/wingo
+#redshiftgui --min &
+#compton &
+#synapse --startup &
+#volumeicon &
+#urxvtd &
+sxhkd &
+exec bspwm 
