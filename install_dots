@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Link all dotfiles into $HOME, backing up 
-# existing non-links files that are in the way.
-for f in $(find . -maxdepth 1 -type f -name '.*' | cut -c 3-); do
-  [[ -f "$HOME/$f" && ! -h "$HOME/$f" ]] && mv --verbose "$HOME/$f" "backups/$f"
-  ln --symbolic --verbose --force "$PWD/$f" "$HOME"
-done
-
