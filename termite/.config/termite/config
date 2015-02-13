@@ -1,0 +1,158 @@
+[options]
+resize_grip = false
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+#font = Monospace 8
+font = Droid Sans Mono 8
+#font = Cousine 8
+#font = Liberation Mono 8
+#font = Meslo LG M:style=Regular
+#font = Meslo LG S 10
+#font = DejaVu Sans Mono 9
+scrollback_lines = 1000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# 0.0: opaque, 1.0: transparent
+transparency = 0.0
+pseudo_transparency = false
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+#browser = firefox
+
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&amp;#:_=+@~
+
+# set size hints for the window
+#size_hints = false
+
+#[colors]
+# Base16 Railscasts
+# Scheme: Ryan Bates (http://railscasts.com)
+
+#foreground      = #e6e1dc
+#foreground_bold = #e6e1dc
+#cursor          = #e6e1dc
+#background      = #2b2b2b
+#
+## 16 color space
+#color0  = #2b2b2b
+#color1  = #da4939
+#color2  = #a5c261
+#color3  = #ffc66d
+#color4  = #6d9cbe
+#color5  = #b6b3eb
+#color6  = #519f50
+#color7  = #e6e1dc
+#color8  = #5a647e
+#color9  = #da4939
+#color10 = #a5c261
+#color11 = #ffc66d
+#color12 = #6d9cbe
+#color13 = #b6b3eb
+#color14 = #519f50
+#color15 = #f9f7f3
+#
+## 256 color space
+#color16 = #cc7833
+#color17 = #bc9458
+#color18 = #272935
+#color19 = #3a4055
+#color20 = #d4cfc9
+#color21 = #f4f1ed
+
+
+[colors]
+# Base16 Solarized
+# Scheme: Ethan Schoonover (http://ethanschoonover.com/solarized)
+
+foreground      = #586e75
+foreground_bold = #586e75
+cursor          = #586e75
+background      = #fdf6e3
+
+# 16 color space
+color0  = #002b36
+color1  = #dc322f
+color2  = #859900
+color3  = #b58900
+color4  = #268bd2
+color5  = #6c71c4
+color6  = #2aa198
+color7  = #93a1a1
+color8  = #657b83
+color9  = #dc322f
+color10 = #859900
+color11 = #b58900
+color12 = #268bd2
+color13 = #6c71c4
+color14 = #2aa198
+color15 = #fdf6e3
+
+# 256 color space
+color16 = #cb4b16
+color17 = #d33682
+color18 = #073642
+color19 = #586e75
+color20 = #839496
+color21 = #eee8d5
+
+
+#[colors]
+## Base16 Solarized
+## Scheme: Ethan Schoonover (http://ethanschoonover.com/solarized)
+#
+#foreground      = #93a1a1
+#foreground_bold = #93a1a1
+#cursor          = #93a1a1
+#background      = #002b36
+#
+## 16 color space
+#color0  = #002b36
+#color1  = #dc322f
+#color2  = #859900
+#color3  = #b58900
+#color4  = #268bd2
+#color5  = #6c71c4
+#color6  = #2aa198
+#color7  = #93a1a1
+#color8  = #657b83
+#color9  = #dc322f
+#color10 = #859900
+#color11 = #b58900
+#color12 = #268bd2
+#color13 = #6c71c4
+#color14 = #2aa198
+#color15 = #fdf6e3
+#
+## 256 color space
+#color16 = #cb4b16
+#color17 = #d33682
+#color18 = #073642
+#color19 = #586e75
+#color20 = #839496
+#color21 = #eee8d5
+
+#[hints]
+#font = Monospace 12
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini
