@@ -92,17 +92,15 @@ alt + @button{1-3}
 
 alt + d
     bspc control --toggle-visibility
-#
-# wm independent hotkeys
-#
+
 Pause
   sudo systemctl suspend
 
 alt + Return
-    termite
+  termite
 
 super + space
-    dmenu_run
+  dmenu_run
 
 XF86AudioPlay
   mpc toggle

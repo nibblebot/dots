@@ -5,7 +5,6 @@ mright=HDMI-0
 
 bspc monitor $mleft --reset-desktops web dev term vm config games 7 8 9 0
 bspc monitor $mright --reset-desktops chat media F3 F4
-bspc desktop chat --toggle floating=on
 
 bspc config border_width 4
 bspc config window_gap 10
@@ -23,14 +22,13 @@ bspc config focus_follows_pointer true
 bspc config auto_alternate        false
 bspc config auto_cancel           true
 bspc config history_aware_focus   true
-
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 # RULES
 for r in $(bspc rule -l); do bspc rule -r tail; done
 
-bspc rule -a * floating=on
+#bspc rule -a * floating=on
 #bspc rule -a Skype desktop=chat
 #bspc rule -a Pidgin desktop=chat
 #bspc rule -a bitly.hipchat.com__chat desktop=chat
