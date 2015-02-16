@@ -12,39 +12,22 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ack.vim'
 Plugin 'scrooloose/syntastic'
-
-" Tmux Integration
-"Plugin 'christoomey/vim-tmux-navigator'
-
-" MAYBE USE THESE LATER
-"Plugin 'repeat.vim'
-"Plugin 'matchit.zip'
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'EasyGrep'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'tpope/vim-surround'
-"Plugin 'juvenn/mustache.vim'
-"Plugin 'UltiSnips'
-"Plugin 'ZoomWin'
-"Plugin 'Command-T'
-"Plugin 'briancollins/vim-jst'
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'bigfish/vim-js-beautify'
-"Plugin 'jnwhiteh/vim-golang'
-"Plugin 'mattn/zencoding-vim'
-"Plugin 'john2x/flatui.vim'
 Plugin 'chriskempson/base16-vim'
-"Plugin 'bling/vim-airline'
-
-" Syntax Highlighting
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'nono/vim-handlebars'
 
-Plugin 'ShowTrailingWhitespace'
-Plugin 'DeleteTrailingWhitespace'
+"Plugin 'DeleteTrailingWhitespace'
+"Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'repeat.vim'
+"Plugin 'matchit.zip'
+"Plugin 'Raimondi/delimitMate'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-surround'
+"Plugin 'UltiSnips'
+"Plugin 'ZoomWin'
+"Plugin 'jnwhiteh/vim-golang'
+"Plugin 'bling/vim-airline'
 
-" Color Schemes
-Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on     " required!

@@ -1,4 +1,4 @@
-#include "/home/josh/.colors/solarized-light"
+#include "/home/josh/.colors/solarized"
 
 Xft.autohint:	0
 Xft.lcdfilter:	lcddefault
@@ -35,7 +35,7 @@ URxvt.boldFont: xft:Cousine:bold:size=8
 !URxvt.font: xft:Anonymous Pro for Powerline:size=8
 !URxvt.boldFont: xft:Anonymous Pro for Powerline:bold:size=8
 URxvt.iso14755 : false
-URxvt.saveLines: 8192 
+URxvt.saveLines: 8192
 URxvt.perl-ext-common: default,matcher,vtwheel,clipboard,font-size
 URxvt.keysym.C-S-C: perl:clipboard:copy
 URxvt.keysym.C-S-V: perl:clipboard:paste
