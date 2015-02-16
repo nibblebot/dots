@@ -14,8 +14,6 @@ export LC_CTYPE=$LANG
 
 export WINEARCH=win32
 
-#eval $(ssh-agent)
-#ssh-add
 eval `keychain --agents ssh --eval id_rsa`
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
