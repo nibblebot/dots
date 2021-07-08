@@ -1,0 +1,13 @@
+[include]
+  path = ~/.gitconfig_local
+[alias]
+	b = branch
+	ca = commit --amend
+	cm = commit -m
+	co = checkout
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
