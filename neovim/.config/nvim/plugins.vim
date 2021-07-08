@@ -27,6 +27,9 @@ Plug 'chrismccord/bclose.vim'
 " Typescript Syntax and Snippets
 Plug 'HerringtonDarkholme/yats.vim'
 
+" JSX Syntax
+Plug 'maxmellon/vim-jsx-pretty'
+
 " Multi Cursor like sublime or VS Code
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
