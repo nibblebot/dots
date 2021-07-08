@@ -32,6 +32,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Beautiful status and buffer lines
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Colorscheme
 Plug 'gruvbox-community/gruvbox'
