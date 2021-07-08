@@ -5,8 +5,8 @@ alias ls="echo Use 'exa' instead"
 
 alias bat="batcat"
 alias l="exa --group --icons -1"
-alias ll="l -l"
-alias la="ll -a"
+alias ll="exa --group --icons --long"
+alias la="ll --all"
 
 alias md="mkdir -p"
 
