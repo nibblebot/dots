@@ -5,9 +5,9 @@ alias grep="echo Use 'rg' instead"
 alias ls="echo Use 'exa' instead"
 
 alias bat="batcat"
-alias l="exa"
-alias ll="exa -l"
-alias la="exa -la"
+alias l="exa --group --icons"
+alias ll="l -l"
+alias la="ll -a"
 
 alias md='mkdir -p'
 
