@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 alias cat="echo Use 'bat' instead"
 alias less="echo Use 'bat' instead"
 alias grep="echo Use 'rg' instead"
@@ -9,13 +8,13 @@ alias l="exa --group --icons -1"
 alias ll="l -l"
 alias la="ll -a"
 
-alias md='mkdir -p'
+alias md="mkdir -p"
 
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias f='fdfind'
-alias g='git'
+alias f="fdfind"
+alias g="git"
 alias e="$EDITOR"
-alias _='sudo'
+alias _="sudo"
 alias se="sudoedit"
