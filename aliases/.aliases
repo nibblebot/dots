@@ -5,7 +5,7 @@ alias grep="echo Use 'rg' instead"
 alias ls="echo Use 'exa' instead"
 
 alias bat="batcat"
-alias l="exa --group --icons"
+alias l="exa --group --icons -1"
 alias ll="l -l"
 alias la="ll -a"
 
@@ -14,6 +14,7 @@ alias md='mkdir -p'
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias f='fdfind'
 alias g='git'
 alias e="$EDITOR"
 alias _='sudo'
