@@ -4,8 +4,8 @@ alias grep="echo Use 'rg' instead"
 alias ls="echo Use 'exa' instead"
 
 alias bat="batcat"
-alias l="exa --group --icons -1"
-alias ll="exa --group --icons --long"
+alias l="exa --group --icons --group-directories-first"
+alias ll="l --long"
 alias la="ll --all"
 
 alias md="mkdir -p"
@@ -18,3 +18,6 @@ alias g="git"
 alias e="$EDITOR"
 alias _="sudo"
 alias se="sudoedit"
+
+alias aliases="e ~/.aliases && . ~/.aliases"
+alias S="sudo systemctl"

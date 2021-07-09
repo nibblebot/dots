@@ -1,115 +1,121 @@
-# bspwm hotkeys
+#
+# wm independent hotkeys
+#
 
-# Reload SXHKD RC
-alt + Escape
-    pkill -USR1 -x sxhkd
-
-# Reload BSPWM RC
-alt + ctrl + Escape
-    pkill -f "bash $(which bspwm_panel)"; source ~/.config/bspwm/bspwmrc
-
-# Quit
-alt + super + Escape
-    pkill -f "bash $(which bspwm_panel)"; bspc quit
-
-alt + a
-    bspc desktop --toggle floating
-
-alt + w
-    bspc window --close
-
-alt + t
-    bspc desktop --layout next
-
-alt + b
-    bspc desktop --balance
-
-alt + o
-    bspc monitor --focus next
-
-alt + {s,f}
-    bspc window --toggle {floating,fullscreen}
-
-alt + {grave,Tab}
-    bspc {window,desktop} --focus last
-
-alt + apostrophe
-    bspc window --swap last
-
-alt + m
-    bspc window --swap biggest
-
-alt + {_,shift + }{h,j,k,l}
-    bspc window --{focus,swap} {left,down,up,right}
-
-alt + {_,shift + }c
-    bspc window --focus {next,prev}
-
-alt + {comma,period}
-    bspc desktop --circulate {backward,forward}
-
-alt + shift + {comma,period}
-    bspc desktop --rotate {270,90}
-
-alt + bracket{left,right}
-    bspc desktop --focus {prev,next}
-
-alt + ctrl + {h,j,k,l}
-    bspc window --presel {left,down,up,right}
-
-alt + ctrl + shift + {h,j,k,l}
-    bspc window --to-window {left,down,up,right}
-
-alt + ctrl + {_,shift + }space
-    bspc {window --presel cancel,desktop --cancel-presel}
-
-alt + super + {h,j,k,l}
-    bspc window --edge {left -20,down +20,up -20,right +20}
-
-alt + super + shift + {h,j,k,l}
-    bspc window --edge {right -20,up +20,down -20,left +20}
-
-alt + ctrl + {1-9}
-    bspc window --ratio 0.{1-9}
-
-alt + {_,shift + }{1-9,0}
-    bspc {desktop --focus,window --to-desktop} ^{1-9,10}
-
-alt + {_,shift + }{F1,F2,F3,F4}
-    bspc {desktop --focus,window --to-desktop} ^{11,12,13,14}
-
-~button1
-    bspc pointer -g focus
-
-alt + button{1-3}
-    bspc pointer -g {move,resize_side,resize_corner}
-
-alt + !button{1-3}
-    bspc pointer -t %i %i
-
-alt + @button{1-3}
-    bspc pointer -u
-
-alt + d
-    bspc control --toggle-visibility
-
-Pause
-  sudo systemctl suspend
-
+# terminal emulator
 alt + Return
-  termite
+	kitty
 
-super + space
-  dmenu_run
+# program launcher
+alt + @space
+	rofi -show run
 
-XF86AudioPlay
-  mpc toggle
+# make sxhkd reload its configuration files:
+alt + Escape
+	pkill -USR1 -x sxhkd
 
-XF86AudioStop
-  mpc stop
+#
+# bspwm hotkeys
+#
 
-XF86AudioPrev
-  mpc prev
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
 
-XF86AudioNext
-  mpc next
+# close and kill
+alt + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+alt + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+alt + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+alt + g
+	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+# set the window state
+alt + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+alt + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+alt + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+alt + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+alt + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+alt + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+alt + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+alt + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+alt + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+alt + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+alt + super + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+alt + super + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+alt + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

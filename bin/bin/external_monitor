@@ -1,0 +1,6 @@
+#!/bin/bash
+
+external_monitor=$(xrandr --query | rg '^DP-1')
+if [[ $external_monitor = *connected* ]]; then
+  xrandr --output DP-1 --primary --left-of eDP-1
+fi
