@@ -1,6 +1,8 @@
 " Buffer line
 let g:airline#extensions#tabline#enabled = 1
 
+let g:NERDCreateDefaultMappings = 0
+
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['node_modules']
 let NERDTreeMinimalUI=1
