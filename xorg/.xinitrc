@@ -14,11 +14,15 @@ fi
 xsetroot -cursor_name left_ptr
 xmodmap ~/.Xmodmap
 xset r rate 250 50
+xset +fp ~/.fonts
+xset fp rehash
 
 external_monitor
 
 ~/.fehbg &
 compton &
+volumeicon &
+nm-applet &
 bars &
 sxhkd &
 exec bspwm 
