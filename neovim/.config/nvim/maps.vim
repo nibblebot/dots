@@ -26,11 +26,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
 
-"" Toggle Comments Ctrl + /
-nnoremap <C-_> <Plug>NERDCommenterToggle
-vnoremap <C-_> <Plug>NERDCommenterToggle
+"" Toggle Comments with <Space><Space>
+nmap <leader><leader> <Plug>NERDCommenterToggle
+vmap <leader><leader> <Plug>NERDCommenterToggle
 
 "" Ctrl S Save
+inoremap <C-s> <ESC>:w<CR>a
 nnoremap <C-s> :w<CR>
 
 "" Ctrl P FZF
