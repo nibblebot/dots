@@ -6,10 +6,4 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -x polybar -u $UID >/dev/null; do sleep 1; done
 
-# Launch bar
-polybar topbar &
-
-external_monitor=$(xrandr --query | rg '^DP-1')
-if [[ $external_monitor = *connected* ]]; then
-    polybar topbar-external &
-fi
+MONITOR=DP-1 polybar --reload topbar &
