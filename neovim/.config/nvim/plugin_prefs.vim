@@ -3,6 +3,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:NERDCreateDefaultMappings = 0
 
+let g:neovide_cursor_vfx_mode = "railgun"
+
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['node_modules']
 let NERDTreeMinimalUI=1
