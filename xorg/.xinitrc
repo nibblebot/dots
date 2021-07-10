@@ -22,7 +22,6 @@ external_monitor
 ~/.fehbg &
 compton &
 volumeicon &
-nm-applet &
 bars &
 sxhkd &
 exec bspwm 
