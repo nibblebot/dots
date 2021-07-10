@@ -5,6 +5,8 @@ let g:NERDCreateDefaultMappings = 0
 
 let g:neovide_cursor_vfx_mode = "railgun"
 
+let NERDTreeDirArrowExpandable=""
+let NERDTreeDirArrowCollapsible=""
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['node_modules']
 let NERDTreeMinimalUI=1
