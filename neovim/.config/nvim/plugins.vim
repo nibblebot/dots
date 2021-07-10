@@ -37,6 +37,9 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Start page with mru files
+Plug 'mhinz/vim-startify'
+
 " Colorscheme
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
