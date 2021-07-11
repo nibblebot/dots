@@ -18,8 +18,7 @@ xset +fp ~/.fonts
 xset fp rehash
 
 external_monitor
-
-~/.fehbg &
+nitrogen --restore
 compton &
 volumeicon &
 bars &
