@@ -68,7 +68,7 @@ font-2 = "Noto Sans:size=14;1"
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = memory cpu battery date powermenu
+modules-right = mem cpu battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -123,6 +123,11 @@ interval = 2
 format-prefix = "﬙ "
 format-prefix-foreground = ${colors.foreground}
 label = %percentage:2%%
+
+[module/mem]
+type = custom/script
+exec = ~/.config/polybar/scripts/memory.sh
+format-prefix = " "
 
 [module/memory]
 type = internal/memory
