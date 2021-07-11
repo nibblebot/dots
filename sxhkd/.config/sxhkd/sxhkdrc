@@ -4,12 +4,18 @@
 #
 
 # terminal emulator
-alt + Return
+super + Return
 	kitty
 
 # program launcher
-alt + @space
+super + @space
 	rofi -show run
+
+super + b
+  google-chrome
+
+super + f
+  thunar
 
 # make sxhkd reload its configuration files:
 alt + Escape
