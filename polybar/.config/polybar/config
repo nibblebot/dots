@@ -122,7 +122,6 @@ type = internal/cpu
 interval = 2
 format-prefix = "﬙ "
 format-prefix-foreground = ${colors.foreground}
-;format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -130,7 +129,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-;format-underline = #4bffdc
 label = %gb_used%
 
 [module/date]
@@ -138,9 +136,7 @@ type = internal/date
 interval = 5
 date = %a %b %e
 time = %l:%M %P
-;format-underline = #0a6cf5
 label = %date% %{T3}%time%
-;label-font = 5
 
 [module/battery]
 type = internal/battery
