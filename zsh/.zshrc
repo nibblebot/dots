@@ -1,4 +1,5 @@
 path+=('/home/joshua/bin')
+path+=('/home/joshua/.local/bin')
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # The following lines were added by compinstall
