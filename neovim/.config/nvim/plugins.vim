@@ -42,4 +42,5 @@ Plug 'mhinz/vim-startify'
 
 " Colorscheme
 Plug 'gruvbox-community/gruvbox'
+
 call plug#end()
