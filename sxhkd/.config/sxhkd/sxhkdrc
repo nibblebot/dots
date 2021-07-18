@@ -12,7 +12,7 @@ super + @space
 	rofi -show run
 
 super + b
-  google-chrome
+  firefox
 
 super + f
   thunar
