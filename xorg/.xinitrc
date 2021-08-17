@@ -1,5 +1,3 @@
-#!/bin/bash
-
 XDG_DATA_DIRS=/usr/local/share/:/usr/share/
 XDG_CONFIG_DIRS=/etc/xdg
 XDG_DATA_HOME=$HOME/.local/share
@@ -12,15 +10,13 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && type dbus-launch >/dev/null; then
 fi
 
 xsetroot -cursor_name left_ptr
-xmodmap ~/.Xmodmap
-xset r rate 250 50
 xset +fp ~/.fonts
 xset fp rehash
 
-external_monitor
 nitrogen --restore
-compton &
+picom -b
+gammy &
 volumeicon &
-bars &
+polybar --reload topbar &
 sxhkd &
 exec bspwm 
