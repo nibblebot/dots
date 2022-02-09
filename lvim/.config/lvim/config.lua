@@ -8,6 +8,9 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+-- vim settings
+vim.scrolloff = 0
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
@@ -25,6 +28,7 @@ lvim.keys.normal_mode["<S-TAB>"] = ":BufferPrevious<cr>"
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 lvim.builtin.nvimtree.setup.view.width = 50
+lvim.builtin.telescope.defaults.path_display = {"smart"}
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -91,7 +95,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- ---@usage setup a server -- see: https://www.lunarvim.org/languages/#overriding-the-default-configuration
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pylsp", opts)
+require("lvim.lsp.manager").setup("tailwindcss")
 
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -150,7 +154,9 @@ linters.setup {
 }
 
 -- Additional Plugins
--- lvim.plugins = {
+lvim.plugins = {
+  {"wincent/ferret"},
+  }
 --     {"folke/tokyonight.nvim"},
 --     {
 --       "folke/trouble.nvim",
