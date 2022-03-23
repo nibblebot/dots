@@ -20,8 +20,8 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<TAB>"] = ":BufferNext<cr>"
-lvim.keys.normal_mode["<S-TAB>"] = ":BufferPrevious<cr>"
+lvim.keys.normal_mode["<TAB>"] = ":BufferLineCycleNext<cr>"
+lvim.keys.normal_mode["<S-TAB>"] = ":BufferLineCyclePrev<cr>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
@@ -74,6 +74,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "python",
   "typescript",
+  "tsx",
   "css",
   "rust",
   "java",
