@@ -1,17 +1,21 @@
-alias l="exa --group --icons --group-directories-first"
-alias ll="l --long"
-alias la="ll --all"
+if which distrobox &> /dev/null; then
+  alias dev='distrobox enter dev'
+fi
 
-alias md="mkdir -p"
+if which exa &> /dev/null; then
+  # add --icons back when I add Nerd Font for terminal
+  alias l='exa --group --group-directories-first'
+else
+  alias l='ls --group-directories-first'
+fi
 
-alias ..="cd .."
-alias ...="cd ../.."
-
-alias f="fdfind"
-alias g="git"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='l -l'
+alias la='ll -a'
+alias md='mkdir -p'
+alias f='fdfind'
+alias g='git'
 alias e="$EDITOR"
 alias _="sudo"
 alias se="sudoedit"
-
-alias aliases="e ~/.aliases && . ~/.aliases"
-alias S="sudo systemctl"
